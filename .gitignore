@@ -129,3 +129,7 @@ dmypy.json
 .pyre/
 
 pymagicc/
+temp/
+Task1.ipynb
+notebooks/
+Example.ipynb
