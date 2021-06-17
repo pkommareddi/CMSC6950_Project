@@ -1,5 +1,5 @@
 tmp_dir=temp
-plt_emissions=plt_emissions.py
+plt_emissions=plot_emissions.py
 plt_emissions_dep=$(tmp_dir)/rcps.tsv
 
 report.pdf: $(tmp_dir)/radiative_forcing.png $(tmp_dir)/RCP26_Emissions_CH4.png $(tmp_dir)/RCP45_Emissions_CH4.png $(tmp_dir)/RCP26_Emissions_CO2.png $(tmp_dir)/RCP45_Emissions_CO2.png
@@ -23,7 +23,7 @@ $(plt_emissions_dep): write_emissions.py
 $(tmp_dir)/radiative_forcing.png: radiative_forcing.py $(tmp_dir)/magicc.tsv utils.py
 	python $<
 
-$(tmp_dir)/magicc.tsv: apply_magicc_model.py utils.py
+$(tmp_dir)/magicc.tsv: write_magicc_data.py utils.py
 	python $<
 
 .PHONY: clean deapclean

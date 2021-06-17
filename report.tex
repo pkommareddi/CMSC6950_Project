@@ -1,5 +1,8 @@
 \documentclass{article}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
 \usepackage{graphicx}
+\graphicspath{ {./temp/} }
+
 
 \title{CMSC 6950 Final Project - pymagicc}
 \author{Prudhvi Kommareddi}
@@ -9,11 +12,36 @@
 \maketitle
 
 \section{Introduction}
-Pymagicc is a Python interface for the Fortran-based reduced-complexity climate carbon cycle model MAGICC (Meinshausen, Raper, and Wigley 2011). Aiming at broadening the user base of MAGICC1, Pymagicc provides a wrapper around the MAGICC binary, which runs on Windows and has been published under a Creative Commons Attribution. NonCommercial-ShareAlike 3.0 Unported License. Pymagicc itself is licensed under the GNU Affero General Public License v3.0.
+Pymagicc\cite{Gieseke2018} is a Python interface for the Fortran-based reduced-complexity climate carbon cycle model MAGICC (Meinshausen, Raper, and Wigley 2011). Aiming at broadening the user base of MAGICC1, Pymagicc provides a wrapper around the MAGICC binary, which runs on Windows and has been published under a Creative Commons Attribution. NonCommercial-ShareAlike 3.0 Unported License. Pymagicc itself is licensed under the GNU Affero General Public License v3.0.
 
 \section{Tasks}
 
-\subsection{Task 1- Generate Radiative forcing plot}
+\subsection{Task 1- Generate Greenhouse Gas Emissions}
 
-\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{temp/radiative_forcing.png}
+\begin{figure}[h]
+    \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{RCP26_Emissions_CH4}
+\end{figure}
+
+\begin{figure}
+    \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{RCP26_Emissions_CO2}
+\end{figure}
+
+\begin{figure}
+    \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{RCP45_Emissions_CH4}
+\end{figure}
+
+\begin{figure}
+    \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{RCP45_Emissions_CO2}
+\end{figure}
+
+\clearpage
+\subsection{Task 2- Generate Radiative forcing plot}
+
+\begin{figure}[h]
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{radiative_forcing}
+\end{figure}
+
+\bibliographystyle{unsrt}
+\bibliography{refs}
+
 \end{document}
