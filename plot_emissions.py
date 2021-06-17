@@ -5,9 +5,11 @@ import matplotlib.pyplot as plt
 def plot_emmisions(rcps, scenario, variable, file_name):
     rcp26 = rcps[(rcps.scenario == scenario) & (rcps.variable == variable)]
     unit = rcp26['unit'].drop_duplicates().tolist()[0]
-    rcp26 = rcp26.drop(['climate_model', 'model', 'scenario', 'todo', 'unit', 'variable'], axis=1)
+    rcp26 = rcp26.drop(['climate_model', 'model', 'scenario',
+                       'todo', 'unit', 'variable'], axis=1)
     rcp26 = rcp26.T.reset_index().drop(0)
-    rcp26.columns = ['year', 'Bunkers', 'R5LAM', 'R5MAF', 'R5ASIA', 'R5REF', 'R5OECD', 'World']
+    rcp26.columns = ['year', 'Bunkers', 'R5LAM',
+                     'R5MAF', 'R5ASIA', 'R5REF', 'R5OECD', 'World']
     rcp26 = rcp26[rcp26.year < '2101']
     rcp26['year'] = rcp26['year'].astype('datetime64[ns]')
 
@@ -22,10 +24,13 @@ def plot_emmisions(rcps, scenario, variable, file_name):
     ax.grid()
     plt.savefig(file_name)
 
+
 # read RCP data
 rcps = utils.read_delimited_text('rcps.tsv', delimiter='\t')
 
-plot_emmisions(rcps, 'RCP26', 'Emissions|CH4', 'temp/RCP26_Emissions|CH4.png')
-plot_emmisions(rcps, 'RCP45', 'Emissions|CH4', 'temp/RCP45_Emissions|CH4.png')
-plot_emmisions(rcps, 'RCP26', 'Emissions|CO2|MAGICC Fossil and Industrial', 'temp/RCP26_Emissions|CO2.png')
-plot_emmisions(rcps, 'RCP45', 'Emissions|CO2|MAGICC Fossil and Industrial', 'temp/RCP45_Emissions|CO2.png')
+
+if __name__ == '__main__':
+    import sys
+
+    utils.create_temp_dir_if_not_exists()
+    plot_emmisions(rcps, sys.argv[1], sys.argv[2], sys.argv[3])

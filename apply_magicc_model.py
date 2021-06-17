@@ -10,4 +10,4 @@ with MAGICC6() as magicc:
         results.append(magicc.run(rcp), inplace=True)
 
 # Write the MAGICC scenario data to a file
-write_delimited_text(results, 'rcps.tsv', delimiter='\t')
+write_delimited_text(results, 'magicc.tsv', delimiter='\t')
