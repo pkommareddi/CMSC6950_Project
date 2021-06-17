@@ -3,6 +3,7 @@
 \usepackage{graphicx}
 \graphicspath{ {./temp/} }
 
+\usepackage[utf8]{inputenc}
 
 \title{CMSC 6950 Final Project - pymagicc}
 \author{Prudhvi Kommareddi}
@@ -15,9 +16,10 @@
 Pymagicc\cite{Gieseke2018} is a Python interface for the Fortran-based reduced-complexity climate carbon cycle model MAGICC (Meinshausen, Raper, and Wigley 2011). Aiming at broadening the user base of MAGICC1, Pymagicc provides a wrapper around the MAGICC binary, which runs on Windows and has been published under a Creative Commons Attribution. NonCommercial-ShareAlike 3.0 Unported License. Pymagicc itself is licensed under the GNU Affero General Public License v3.0.
 
 \section{Tasks}
+This project utilises the Pymagicc module to achieve the below computational tasks and visualizations.
 
 \subsection{Task 1- Generate Greenhouse Gas Emissions}
-
+In this task, we read data from RCP2.6, RCP4.5, RCP6, RCP,8.5 scenario files, convert the data in MAGICData format to a pandas DataFrame, and then build visualizations to show Carbon Dioxide and Methane gas emission projections for RCP2.6 and RCP4.5 scenarios. 
 \begin{figure}[h]
     \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{RCP26_Emissions_CH4}
 \end{figure}
@@ -36,7 +38,7 @@ Pymagicc\cite{Gieseke2018} is a Python interface for the Fortran-based reduced-c
 
 \clearpage
 \subsection{Task 2- Generate Radiative forcing plot}
-
+In this task, we run the MAGICC model on RCP2.6, RCP4.5, RCP6, RCP,8.5 scenarios and visualize the Radiative Forcing projections for each of the given projections from 1765 to 2100.
 \begin{figure}[h]
 \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{radiative_forcing}
 \end{figure}
