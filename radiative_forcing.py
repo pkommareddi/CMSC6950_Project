@@ -1,9 +1,8 @@
+from pandas.core.frame import DataFrame
 from pymagicc import MAGICC6
 from pymagicc.scenarios import rcp26, rcp45, rcp60, rcp85
 from pymagicc.io import MAGICCData
 
-import numpy as np
-import pandas as pd
 import matplotlib.pyplot as plt
 
 from utils import write_delimited_text, read_delimited_text
@@ -11,7 +10,7 @@ from utils import write_delimited_text, read_delimited_text
 
 def main():
     # Read the Magicc data
-    magicc_data = read_delimited_text('rcps.tsv', delimiter='\t')
+    magicc_data = read_delimited_text('magicc.tsv', delimiter='\t')
 
     # Filter the data to Region = 'World' and variable = 'Radiative Forcing'
     filtered_magicc_data = magicc_data[(magicc_data.region == 'World') & (
