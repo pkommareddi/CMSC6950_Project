@@ -15,14 +15,22 @@ def convert_df_to_MAGICCData(data: DataFrame) -> MAGICCData:
     return MAGICCData(data)
 
 
-def save_scenarios_as_delimited_text(scenarios):
+def save_scenarios_as_delimited_text(scenarios, filename):
+    '''
+    Format the RCP scenario data as a DataFrame
+    '''
+
     rcps = deepcopy(scenarios[0])
     for scenario in scenarios[1:]:
         rcps.append(scenario, inplace=True)
-    write_delimited_text(rcps, 'rcps.tsv', delimiter='\t')
+    write_delimited_text(rcps, filename, delimiter='\t')
 
 
 def create_temp_dir_if_not_exists():
+    '''
+    Create a temp dir for saving intermediate data and visualizations
+    '''
+
     if not os.path.exists('temp'):
         os.makedirs('temp')
 
@@ -40,6 +48,10 @@ def write_delimited_text(data: MAGICCData, filename, delimiter=',', header=True,
 
 
 def read_delimited_text(filename, delimiter=',', header='infer'):
+    '''
+    Read a delimited text file as DataFrame
+    '''
+
     if not os.path.exists('temp'):
         raise RuntimeError('temp folder does not exist')
     filename = os.path.join('temp', filename)

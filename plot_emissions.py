@@ -3,6 +3,10 @@ import matplotlib.pyplot as plt
 
 
 def plot_emmisions(rcps, scenario, variable, file_name):
+    '''
+    Plot a line chart for a given senario and variable type
+    '''
+
     rcp26 = rcps[(rcps.scenario == scenario) & (rcps.variable == variable)]
     unit = rcp26['unit'].drop_duplicates().tolist()[0]
     rcp26 = rcp26.drop(['climate_model', 'model', 'scenario',
