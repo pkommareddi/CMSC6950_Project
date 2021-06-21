@@ -133,3 +133,5 @@ temp/
 Task1.ipynb
 notebooks/
 Example.ipynb
+.vscode/
+test.py
