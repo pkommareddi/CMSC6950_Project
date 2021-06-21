@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 from utils import read_delimited_text
 
 
-def main():
+def main(variable):
     path = os.getcwd()
     csv_files = glob.glob(os.path.join(path, 'temp', "*_magicc_data.tsv"))
     l = []
@@ -19,7 +19,7 @@ def main():
 
     # Filter the data to Region = 'World' and variable = 'Radiative Forcing'
     filtered_magicc_data = magicc_data[(magicc_data.region == 'World') & (
-        magicc_data.variable == 'Radiative Forcing')]
+        magicc_data.variable == variable)]
     filtered_magicc_data = filtered_magicc_data.drop(
         ['climate_model', 'model', 'region', 'todo', 'unit', 'variable'], axis=1)
 
@@ -33,12 +33,14 @@ def main():
         ax.plot(df['year'], df[col], label=col.upper())
     ax.legend(title='Scenarios')
     ax.set_xlabel('Year')
-    ax.set_ylabel('Radiative Forcing')
-    ax.set_title('Radiative Forcing VS Time')
+    ax.set_ylabel(variable)
+    ax.set_title(f'{variable} VS Time')
     ax.grid()
 
-    plt.savefig('temp/radiative_forcing.png')
+    filename = variable.replace(' ', '_')
+    plt.savefig(f'temp/{filename}.png')
 
 
 if __name__ == '__main__':
-    main()
+    import sys
+    main(sys.argv[1])
