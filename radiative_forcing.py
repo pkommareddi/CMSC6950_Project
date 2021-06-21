@@ -1,16 +1,21 @@
-from pandas.core.frame import DataFrame
-from pymagicc import MAGICC6
-from pymagicc.scenarios import rcp26, rcp45, rcp60, rcp85
-from pymagicc.io import MAGICCData
+import os
+import glob
 
+import pandas as pd
 import matplotlib.pyplot as plt
 
-from utils import write_delimited_text, read_delimited_text
+from utils import read_delimited_text
 
 
 def main():
+    path = os.getcwd()
+    csv_files = glob.glob(os.path.join(path, 'temp', "*_magicc_data.tsv"))
+    l = []
+    for f in csv_files:
+        l.append(read_delimited_text(f.split("/")[-1], delimiter='\t'))
+
     # Read the Magicc data
-    magicc_data = read_delimited_text('magicc.tsv', delimiter='\t')
+    magicc_data = pd.concat(l).reset_index(drop=True)
 
     # Filter the data to Region = 'World' and variable = 'Radiative Forcing'
     filtered_magicc_data = magicc_data[(magicc_data.region == 'World') & (
