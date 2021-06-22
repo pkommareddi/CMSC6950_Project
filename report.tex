@@ -1,5 +1,6 @@
 \documentclass{article}
 \usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage{float}
 \usepackage{graphicx}
 \graphicspath{ {./temp/} }
 
@@ -15,33 +16,49 @@
 \section{Introduction}
 Pymagicc\cite{Gieseke2018} is a Python interface for the Fortran-based reduced-complexity climate carbon cycle model MAGICC (Meinshausen, Raper, and Wigley 2011). Aiming at broadening the user base of MAGICC1, Pymagicc provides a wrapper around the MAGICC binary, which runs on Windows and has been published under a Creative Commons Attribution. NonCommercial-ShareAlike 3.0 Unported License. Pymagicc itself is licensed under the GNU Affero General Public License v3.0.
 
+Pymagicc runs on Windows, macOS and Linux and simplifies usage of the model by utilising DataFrames from the Pandas library (McKinney 2010) as a data structure for emissions scenarios. To read and write the text-based MAGICC configuration and output files in the Fortran Namelist format Pymagicc utilizes the f90nml library (Ward 2017). All MAGICC model parameters and emissions scenarios can thus easily be modified through Pymagicc from Python.
+
+MAGICC (Model for the Assessment of Greenhouse Gas Induced Climate Change) is widely used in the assessment of future emissions pathways in climate policy analyses, e.g. in the Fifth Assessment Report of the Intergovernmental Panel on Climate Change (IPCC 2014). Many Integrated Assessment Models (IAMs) utilize MAGICC to model the physical aspects of climate change. It has also been used to emulate complex atmosphere ocean general circulation models (AOGCM) from the Coupled Model Intercomparison Projects5
+
+
 \section{Tasks}
 This project utilises the Pymagicc module to achieve the below computational tasks and visualizations.
 
 \subsection{Task 1- Generate Greenhouse Gas Emissions}
 In this task, we read data from RCP2.6, RCP4.5, RCP6, RCP,8.5 scenario files, convert the data in MAGICData format to a pandas DataFrame, and then build visualizations to show Carbon Dioxide and Methane gas emission projections for RCP2.6 and RCP4.5 scenarios. 
-\begin{figure}[h]
+\begin{figure}[ht]
     \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{RCP26_Emissions_CH4}
+    \caption{RCP26 CH4 Emissions Projections}
 \end{figure}
 
 \begin{figure}
     \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{RCP26_Emissions_CO2}
+    \caption{RCP26 CO2 Emissions Projections}
 \end{figure}
 
 \begin{figure}
     \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{RCP45_Emissions_CH4}
+    \caption{RCP45 CH4 Emissions Projections}
 \end{figure}
 
 \begin{figure}
     \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{RCP45_Emissions_CO2}
+    \caption{RCP45 CO2 Emissions Projections}
 \end{figure}
 
 \clearpage
-\subsection{Task 2- Generate Radiative forcing plot}
+\subsection{Task 2- Generate plots on the MAGICC model data}
 In this task, we run the MAGICC model on RCP2.6, RCP4.5, RCP6, RCP,8.5 scenarios and visualize the Radiative Forcing projections for each of the given projections from 1765 to 2100.
-\begin{figure}[h]
-\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{radiative_forcing}
+\begin{figure}[H]
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{Radiative_Forcing}
+\caption{Radiative Forcing Projections}
 \end{figure}
+
+\begin{figure}[H]
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{Surface_Temperature}
+\caption{Surface Temperature Projections}
+\end{figure}
+    
 
 \bibliographystyle{unsrt}
 \bibliography{refs}
