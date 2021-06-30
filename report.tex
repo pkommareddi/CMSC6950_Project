@@ -1,5 +1,5 @@
 \documentclass{article}
-\usepackage[a4paper, total={6in, 8in}]{geometry}
+% \usepackage[a4paper, total={6in, 8in}]{geometry}
 \usepackage{float}
 \usepackage{graphicx}
 \graphicspath{ {./temp/} }
@@ -14,11 +14,16 @@
 \maketitle
 
 \section{Introduction}
-Pymagicc\cite{Gieseke2018} is a Python interface for the Fortran-based reduced-complexity climate carbon cycle model MAGICC (Meinshausen, Raper, and Wigley 2011). Aiming at broadening the user base of MAGICC1, Pymagicc provides a wrapper around the MAGICC binary, which runs on Windows and has been published under a Creative Commons Attribution. NonCommercial-ShareAlike 3.0 Unported License. Pymagicc itself is licensed under the GNU Affero General Public License v3.0.
+Pymagicc\cite{Gieseke2018} is an open source python wrapper for the Fortran-based MAGICC climate model.
+It makes it simpler to use and run the MAGICC model Windows application. Pymagicc comes with several
+built-in data structures to model the several emission pathways. MAGICCData, is the core data structure
+that is used to model the Representative Concentration Pathways (RCP) and comes with Pandas DataFrame like
+functionality and also has the ability to make lineplots.
 
-Pymagicc runs on Windows, macOS and Linux and simplifies usage of the model by utilising DataFrames from the Pandas library (McKinney 2010) as a data structure for emissions scenarios. To read and write the text-based MAGICC configuration and output files in the Fortran Namelist format Pymagicc utilizes the f90nml library (Ward 2017). All MAGICC model parameters and emissions scenarios can thus easily be modified through Pymagicc from Python.
-
-MAGICC (Model for the Assessment of Greenhouse Gas Induced Climate Change) is widely used in the assessment of future emissions pathways in climate policy analyses, e.g. in the Fifth Assessment Report of the Intergovernmental Panel on Climate Change (IPCC 2014). Many Integrated Assessment Models (IAMs) utilize MAGICC to model the physical aspects of climate change. It has also been used to emulate complex atmosphere ocean general circulation models (AOGCM) from the Coupled Model Intercomparison Projects5
+MAGICC which stands for Model for the Assessment of Greenhouse Gas Induced Climate Change is a
+climate model widely used for the assessment of future Greenhouse gas emissions in climate policy analyses.
+It is most prominently used by the Intergovernmental Panel on Climate Change (IPCC) for key scientfic
+publications and by a number of Integrated Assessment Models.
 
 
 \section{Tasks}
