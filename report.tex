@@ -14,23 +14,33 @@
 \maketitle
 
 \section{Introduction}
-Pymagicc\cite{Gieseke2018} is an open source python wrapper for the Fortran-based MAGICC climate model.
+Pymagicc\cite{Gieseke2018} is an open-source Python wrapper for the Fortran-based MAGICC climate model.
 It makes it simpler to use and run the MAGICC model Windows application. Pymagicc comes with several
-built-in data structures to model the several emission pathways. MAGICCData, is the core data structure
-that is used to model the Representative Concentration Pathways (RCP) and comes with Pandas DataFrame like
-functionality and also has the ability to make lineplots.
+built-in data structures to model the several emission pathways. MAGICCData is the core data structure 
+used to model the Representative Concentration Pathways (RCP) and comes with Pandas DataFrame like
+functionality and also has the ability to make line plots.
 
-MAGICC which stands for Model for the Assessment of Greenhouse Gas Induced Climate Change is a
-climate model widely used for the assessment of future Greenhouse gas emissions in climate policy analyses.
-It is most prominently used by the Intergovernmental Panel on Climate Change (IPCC) for key scientfic
-publications and by a number of Integrated Assessment Models.
+MAGICC, which stands for Model for the Assessment of Greenhouse Gas Induced Climate Change, is a
+climate model widely used to assess future Greenhouse gas emissions in climate policy analyses.
+It is most prominently used by the Intergovernmental Panel on Climate Change (IPCC) for crucial scientific
+publications and by many Integrated Assessment Models.
 
 
 \section{Tasks}
-This project utilises the Pymagicc module to achieve the below computational tasks and visualizations.
+This project utilizes the Pymagicc module to achieve the below computational tasks and visualizations.
+While MAGICCData object provides built-in functionality to make line plots, this project uses the
+Matplotlib library to generate plots. The majority of the tasks involve wrangling the scenario's data
+to generate the desired line charts.
+
+\textbf{Note:} All of the visualizations have been recreated from the examples in the
+original git repository. Also, the data available in this project is time-series data,
+and hence there was little room for experimentation.
 
 \subsection{Task 1- Generate Greenhouse Gas Emissions}
-In this task, we read data from RCP2.6, RCP4.5, RCP6, RCP,8.5 scenario files, convert the data in MAGICData format to a pandas DataFrame, and then build visualizations to show Carbon Dioxide and Methane gas emission projections for RCP2.6 and RCP4.5 scenarios. 
+The computational task involves reading data from RCP2.6, RCP4.5, RCP6, RCP,8.5 scenario files
+and converting the data in MAGICData format to a pandas DataFrame. Using the data previously saved, we
+build visualizations to show Carbon Dioxide and Methane gas emission projections for RCP2.6 and RCP4.5 scenarios.
+
 \begin{figure}[ht]
     \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{RCP26_Emissions_CH4}
     \caption{RCP26 CH4 Emissions Projections}
