@@ -32,9 +32,9 @@ While MAGICCData object provides built-in functionality to make line plots, this
 Matplotlib library to generate plots. The majority of the tasks involve wrangling the scenario's data
 to generate the desired line charts.
 
-\textbf{Note:} All of the visualizations have been recreated from the examples in the
-original git repository. Also, the data available in this project is time-series data,
-and hence there was little room for experimentation.
+\textit{Note:} All of the visualizations have been recreated from the examples in the
+original git repository. Also, the data available in this project is time-series data.
+Hence there was little room for experimentation, and we were limited to just line charts.
 
 \subsection{Task 1- Generate Greenhouse Gas Emissions}
 The computational task involves reading data from RCP2.6, RCP4.5, RCP6, RCP,8.5 scenario files
@@ -62,8 +62,12 @@ build visualizations to show Carbon Dioxide and Methane gas emission projections
 \end{figure}
 
 \clearpage
-\subsection{Task 2- Generate plots on the MAGICC model data}
-In this task, we run the MAGICC model on RCP2.6, RCP4.5, RCP6, RCP,8.5 scenarios and visualize the Radiative Forcing projections for each of the given projections from 1765 to 2100.
+\subsection{Task 2- Run MAGICC model}
+Here, the computational task involves running the MAGICC model on the RCP2.6, RCP4.5, RCP6, RCP,8.5
+scenarios. Running the model will build projections like Concentration of gases, Radiative Forcing,
+Surface Temperatures, etc., for each the given climate scenario. Then, we make visualizations to plot
+Radiative Forcing and Surface Temperature projections for each of the four general scenarios from 1765 to 2100.
+
 \begin{figure}[H]
 \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{Radiative_Forcing}
 \caption{Radiative Forcing Projections}
