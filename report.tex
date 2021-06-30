@@ -23,8 +23,18 @@ functionality and also has the ability to make line plots.
 MAGICC, which stands for Model for the Assessment of Greenhouse Gas Induced Climate Change, is a
 climate model widely used to assess future Greenhouse gas emissions in climate policy analyses.
 It is most prominently used by the Intergovernmental Panel on Climate Change (IPCC) for crucial scientific
-publications and by many Integrated Assessment Models.
+publications and by many Integrated Assessment Models, especially in the Fifth Assessment Report (AR5).
 
+Climate change scenarios are the projections of future greenhouse gas emissions. The IPCC's
+Fifth Assessment Report (AR5) introduced new sets of climate change scenarios that are called
+Representative Concentration Pathway (RCP). RCP2.6, RCP4.5, RCP6, and RCP8.5 are the four pathways
+used to describe different climate futures which are considered to be possible based on the
+emissions of greenhouse gases in the years to come.
+
+In this project, The first visualization plots Carbon Dioxide (CO2) and Methane (CH4) gas emissions
+in the RCP2.6 and RCP4.5 scenarios. The second visualization uses the projections made by the
+MAGICC model for each of the four scenarios to plot Radiative Forcing and Surface Temperature
+values.
 
 \section{Tasks}
 This project utilizes the Pymagicc module to achieve the below computational tasks and visualizations.
@@ -36,7 +46,7 @@ to generate the desired line charts.
 original git repository. Also, the data available in this project is time-series data.
 Hence there was little room for experimentation, and we were limited to just line charts.
 
-\subsection{Task 1- Generate Greenhouse Gas Emissions}
+\subsection{Task 1 - Generate Greenhouse Gas Emissions}
 The computational task involves reading data from RCP2.6, RCP4.5, RCP6, RCP,8.5 scenario files
 and converting the data in MAGICData format to a pandas DataFrame. Using the data previously saved, we
 build visualizations to show Carbon Dioxide and Methane gas emission projections for RCP2.6 and RCP4.5 scenarios.
@@ -62,7 +72,7 @@ build visualizations to show Carbon Dioxide and Methane gas emission projections
 \end{figure}
 
 \clearpage
-\subsection{Task 2- Run MAGICC model}
+\subsection{Task 2 - Run MAGICC model}
 Here, the computational task involves running the MAGICC model on the RCP2.6, RCP4.5, RCP6, RCP,8.5
 scenarios. Running the model will build projections like Concentration of gases, Radiative Forcing,
 Surface Temperatures, etc., for each the given climate scenario. Then, we make visualizations to plot
